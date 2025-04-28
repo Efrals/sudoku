@@ -1,0 +1,70 @@
+body {
+  font-family: "National Park", sans-serif;
+  text-align: center;
+  background-color: black;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+hr {
+  width: 600px;
+}
+
+/* Contador de erros */
+#errors {
+  color: red;
+}
+
+/* Taqbuleiro */
+#board {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+/* Cada Quadradinho */
+.tile {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgb(0, 0, 0);
+
+  font-size: 23px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Paleta de números de seleção */
+#digits {
+  width: 450px;
+  height: 50px;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Números do tabuleiro */
+.number {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgb(0, 0, 0);
+
+  margin: 1px;
+  font-size: 23px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Númeor da paleta selecionado */
+.number-selected {
+  background-color: cyan;
+}
