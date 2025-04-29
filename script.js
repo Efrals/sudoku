@@ -50,8 +50,18 @@ function setGame() {
     for (let c = 0; c < 9; c++) {
       let tile = document.createElement("div");
       tile.id = r.toString() + "-" + c.toString();
-      tile.classList.add("tile");
+      if (board[r][c] != "-") {
+        tile.innerText = board[r][c];
+        tile.classList.add("tile-start");
+      }
+      if (r == 2 || r == 5) {
+        tile.classList.add("horizontal-line");
+      }
+      if (c == 2 || c == 5) {
+        tile.classList.add("vertical-line");
+      }
       tile.addEventListener("click", selectTile);
+      tile.classList.add("tile");
       document.getElementById("board").append(tile);
     }
   }
@@ -69,6 +79,26 @@ function selectNumber() {
 // Seleciona e colore bloco do tabuleiro
 function selectTile() {
   if (numberSelected) {
+    if (this.innerText != "") {
+      return;
+    }
+  }
+  this.innerText = numberSelected.id;
+
+  /*  Divide os números entre os traços para se obter os números e criar 
+      uma matriz de números individuais. Porque atualmente são strings.
+      Ex: 0-0 -> [0,0]
+      Ex: 2-5 -> [2,5]
+  */
+  let coords = this.id.split("-");
+  let r = parseInt(coords[0]);
+  let c = parseInt(coords[1]);
+
+  // Verificar solução bate com o bloco selecionado
+  if (solution[r][c] == numberSelected.id) {
     this.innerText = numberSelected.id;
+  } else {
+    errors++;
+    document.getElementById("errors").innerText = `Erros: ${errors}`;
   }
 }

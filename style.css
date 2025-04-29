@@ -4,10 +4,12 @@ body {
   background-color: black;
 }
 
+/* Título */
 h1 {
   color: rgb(255, 255, 255);
 }
 
+/* Linha de separação */
 hr {
   width: 600px;
 }
@@ -24,7 +26,7 @@ hr {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Cada Quadradinho */
@@ -64,7 +66,22 @@ hr {
   align-items: center;
 }
 
-/* Númeor da paleta selecionado */
+/* Número da paleta selecionado */
 .number-selected {
   background-color: cyan;
+}
+
+/* Números dados inicialmente */
+.tile-start {
+  background-color: rgb(202, 202, 202);
+}
+
+/* Linha vertical para facilictar a visualização */
+.vertical-line {
+  border-right: 1px solid rgb(0, 26, 255);
+}
+
+/* Linha horizontal para facilictar a visualização */
+.horizontal-line {
+  border-bottom: 1px solid rgb(0, 26, 255);
 }
